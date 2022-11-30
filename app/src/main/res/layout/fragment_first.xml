@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.FirstFragment" >
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/alarmAddBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#FFC107"
+        android:clickable="true"
+        android:src="@drawable/ic_alarm_add"
+        app:fabCustomSize="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/startStopBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/lightblue"
+        android:clickable="true"
+        android:src="@drawable/ic_play2"
+        android:visibility="invisible"
+        app:fabCustomSize="70dp"
+        app:layout_constraintBottom_toBottomOf="@+id/alarmAddBtn"
+        app:layout_constraintEnd_toStartOf="@+id/alarmAddBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/alarmAddBtn"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck"
+        tools:visibility="visible" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/deleteBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/lightblue"
+        android:clickable="true"
+        android:src="@drawable/ic_delete"
+        android:visibility="invisible"
+        app:fabCustomSize="70dp"
+        app:layout_constraintBottom_toBottomOf="@+id/alarmAddBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/alarmAddBtn"
+        app:layout_constraintTop_toTopOf="@+id/alarmAddBtn"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/alarmTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="center"
+        android:textColor="@color/gray"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="2:00:00" />
+
+    <TextView
+        android:id="@+id/endingTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="center"
+        android:textColor="#EF6C00"
+        android:textSize="48sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/alarmAddBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="15:00"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/alarmONImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="64dp"
+        android:src="@drawable/ic_timer"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/alarmOFFImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="64dp"
+        android:src="@drawable/ic_timer_off"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/firstFragment">
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.tabsample2.fragment.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_first_to_tab03"
+            app:destination="@id/tab03Fragment"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slide_to_left" />
+        <action
+            android:id="@+id/action_firstFragment_self"
+            app:destination="@id/firstFragment"
+            app:enterAnim="@anim/slide_from_bottom"
+            app:exitAnim="@anim/slide_to_top" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tab03Fragment"
+        android:name="com.example.tabsample2.fragment.Tab03Fragment"
+        android:label="fragment_tab03"
+        tools:layout="@layout/tab_03_framgnet">
+        <action
+            android:id="@+id/action_tab03_to_first"
+            app:destination="@+id/firstFragment"
+            app:enterAnim="@anim/slide_from_left"
+            app:exitAnim="@anim/slide_to_right" />
+    </fragment>
+
+</navigation>
