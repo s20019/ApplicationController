@@ -120,7 +120,7 @@ class FirstFragment : Fragment() {
             this.isRunning = true
 
             val time1 = LocalTime.now()                         // 現在の時間を取得
-            val time2 = time1.plusMinutes(alarmTime.toLong())   // アラームの時間を現在の時間にプラスして、終了時間を生成する
+            val time2 = time1.plusSeconds(alarmTime.toLong())   // アラームの時間を現在の時間にプラスして、終了時間を生成する
             val time3 = time2.truncatedTo(ChronoUnit.MINUTES)   // 表示に不要な情報である秒以下の値を切り捨てる
             binding.endingTime.text = time3.toString()
 
