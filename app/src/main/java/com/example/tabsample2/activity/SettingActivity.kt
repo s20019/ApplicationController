@@ -15,6 +15,9 @@ class SettingActivity : AppCompatActivity() {
         binding = ActivitySettingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // アクションバーのタイトルを設定
+        supportActionBar?.title = "スマホストップ"
+
         // アクションバーに戻るボタンを表示する処理
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 

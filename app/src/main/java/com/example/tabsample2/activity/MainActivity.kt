@@ -15,6 +15,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // アクションバーのタイトルを設定
+        supportActionBar?.title = "スマホストップ"
     }
 
     // アクションバーに設定メニューを表示させる処理
