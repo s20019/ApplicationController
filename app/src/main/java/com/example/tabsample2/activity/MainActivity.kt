@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
 import com.example.tabsample2.R
 import com.example.tabsample2.databinding.ActivityMainBinding
 
@@ -15,6 +17,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // 常にダークテーマをOFFにする処理
+        AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
 
         // アクションバーのタイトルを設定
         supportActionBar?.title = "スマホストップ"
