@@ -1,14 +1,20 @@
 package com.example.tabsample2
 
+import android.app.AlarmManager
 import android.app.Dialog
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.util.Log
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.example.tabsample2.activity.MainActivity
+import java.util.*
 
 class CustomDialog(private val title: String,
                    private val isRunning: Boolean,
@@ -39,8 +45,10 @@ class CustomDialog(private val title: String,
                 val password = sharedPref?.getString("Password", "")
 
                 // 入力したパスワードが正しければアラームをストップさせる処理が動く
-                if (pwdInput.text.toString() == password)
+                if (pwdInput.text.toString() == password) {
                     okSelected()
+                }
+
                 // 正しくなければメッセージで知らせる
                 else
                     Toast.makeText(context, "パスワードが違います", Toast.LENGTH_SHORT).show()

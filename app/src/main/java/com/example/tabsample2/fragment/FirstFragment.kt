@@ -1,18 +1,25 @@
 package com.example.tabsample2.fragment
 
+import android.app.AlarmManager
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.example.tabsample2.AlarmReceiver
 import com.example.tabsample2.CustomDialog
 import com.example.tabsample2.R
+import com.example.tabsample2.activity.MainActivity
 import com.example.tabsample2.databinding.FragmentFirstBinding
 import java.time.LocalTime
 import java.time.temporal.ChronoUnit
+import java.util.*
 
 class FirstFragment : Fragment() {
     private var _binding: FragmentFirstBinding? = null
@@ -21,6 +28,7 @@ class FirstFragment : Fragment() {
     private var switchState = true              // スイッチの状態を記憶している変数
     private var alarmTime = 0                   // アラームの時間を保持している変数
 
+    private lateinit var am: AlarmManager
     /*
     private val deleteBtn = binding.deleteBtn
     private val endingTime = binding.endingTime
@@ -38,6 +46,8 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        am = requireContext().getSystemService(AlarmManager::class.java)
 
         // DataStore という名前の SharedPreference を取得
         val sharedPref = activity?.getSharedPreferences("DataStore", Context.MODE_PRIVATE)
@@ -84,7 +94,7 @@ class FirstFragment : Fragment() {
                         // ダイアログを表示する処理
                         dialog.show(parentFragmentManager, "password_input_dialog")
                     }
-                    // アラームがスタートしていないとき
+                    // アラームがスタートしていないとき パス設定用dialog
                     false -> {
                         val dialog = CustomDialog("パスワード設定", isRunning) { switchByAlarm(isRunning) }
                         dialog.show(parentFragmentManager, "password_setting_dialog")
@@ -113,6 +123,10 @@ class FirstFragment : Fragment() {
             // アラームが動いていない間は alarmAddBtn と deleteBtn を有効にする
             binding.alarmAddBtn.isEnabled = true
             binding.deleteBtn.isEnabled = true
+
+            //AlarmCancel()を準備
+            stopAlarm(1)
+
             Toast.makeText(context, "アラームをリセットしました", Toast.LENGTH_SHORT).show()
         }
         else {
@@ -122,7 +136,7 @@ class FirstFragment : Fragment() {
             val time1 = LocalTime.now()                         // 現在の時間を取得
             val time2 = time1.plusMinutes(alarmTime.toLong())   // アラームの時間を現在の時間にプラスして、終了時間を生成する
             val time3 = time2.truncatedTo(ChronoUnit.MINUTES)   // 表示に不要な情報である秒以下の値を切り捨てる
-            binding.endingTime.text = time3.toString()
+            binding.endingTime.text = time3.toString()          //@赤字の終了時刻
 
             // アラームが動いている間は終了時間を表示する
             binding.endingTime.visibility = View.VISIBLE
@@ -132,6 +146,11 @@ class FirstFragment : Fragment() {
             // アラームが動いている間は alarmAddBtn と deleteBtn を無効にする
             binding.alarmAddBtn.isEnabled = false
             binding.deleteBtn.isEnabled = false
+
+            //AlarmSet()を準備
+            val seconds = 5L
+            setAlarm(1,seconds)
+
             Toast.makeText(context, "アラームがスタートしました", Toast.LENGTH_SHORT).show()
         }
     }
@@ -140,4 +159,33 @@ class FirstFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
+    private fun setAlarm(id: Int, seconds: Long) {
+        val op: PendingIntent = getAlarmPendingIntent(id , seconds)
+        val cal: Calendar = Calendar.getInstance().apply {
+            timeInMillis = System.currentTimeMillis() + seconds * 1000
+        }
+        val viewIntent: PendingIntent = PendingIntent.getActivity(
+            requireContext(), op.hashCode(),
+            Intent(requireContext(), MainActivity::class.java),
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
+        val info: AlarmManager.AlarmClockInfo =
+            AlarmManager.AlarmClockInfo(cal.timeInMillis, viewIntent)
+        am.setAlarmClock(info, op)
+        Log.d("HOGE_ALARM", "setAlarmClock id: $id")
+    }
+
+    private fun stopAlarm(id: Int) {
+        val op: PendingIntent = getAlarmPendingIntent(id)
+        am.cancel(op)
+    }
+
+    private fun getAlarmPendingIntent(id: Int, time: Long = 0): PendingIntent = PendingIntent.getBroadcast(
+        requireActivity().applicationContext, id,
+        Intent(requireActivity().applicationContext, AlarmReceiver::class.java).apply {
+            putExtra("id", id)
+            putExtra("time", time)
+        },
+        PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+    ).apply { Log.d("alarmPendIntCheck" , "moved!!") }
 }
