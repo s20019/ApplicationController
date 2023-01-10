@@ -148,7 +148,7 @@ class FirstFragment : Fragment() {
             binding.deleteBtn.isEnabled = false
 
             //AlarmSet()を準備
-            val seconds = 5L
+            val seconds = alarmTime.toLong()
             setAlarm(1,seconds)
 
             Toast.makeText(context, "アラームがスタートしました", Toast.LENGTH_SHORT).show()
