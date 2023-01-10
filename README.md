@@ -1,7 +1,7 @@
 # スマホストップ
 
 <p align="center">
-  <img src="https://github.com/s20019/ApplicationController/blob/master/smasto.gif" width="300">
+  <kbd><img src="https://github.com/s20019/ApplicationController/blob/master/smasto.gif" width="300"></kbd>
 </p>
 
 # 概要
