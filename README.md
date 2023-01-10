@@ -1,7 +1,7 @@
 # スマホストップ
 
 <p align="center">
-  <img width="100" alt="smartphone" src="https://user-images.githubusercontent.com/66397379/211450179-5e8bd4d8-e814-4a52-b39c-56fd6911f238.png">
+  ![20230110_124356](https://user-images.githubusercontent.com/66397379/211467729-92ba9e09-a7a1-49c0-9456-f72313d63879.gif)
 </p>
 
 # 概要
