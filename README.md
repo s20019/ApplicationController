@@ -13,6 +13,6 @@
 # 使い方
 15分区切り or 1時間区切りのどちらかのリストから、アラームが来る時間を選択。
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/66397379/211485681-4f451a93-65ed-469e-9bdd-3454bd71fe3d.png" width="300">
-  <img src="https://user-images.githubusercontent.com/66397379/211486440-77a0a392-21a3-42f2-9204-3da116525bb4.png" width="300">
+  <kbd><img src="https://user-images.githubusercontent.com/66397379/211485681-4f451a93-65ed-469e-9bdd-3454bd71fe3d.png" width="300"></kbd>
+  <kbd><img src="https://user-images.githubusercontent.com/66397379/211486440-77a0a392-21a3-42f2-9204-3da116525bb4.png" width="300"></kbd>
 </p>
