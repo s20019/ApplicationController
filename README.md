@@ -21,4 +21,5 @@
 アラームがセットされる。（パスワードの設定は、画面右上の設定画面からオンオフが可能）
 <p align="center">
   <kbd><img src="https://user-images.githubusercontent.com/66397379/211488364-828ddb0a-dc1f-4522-a1f7-76ab55484f3b.png" width="300"></kbd>
+  <kbd><img src="https://user-images.githubusercontent.com/66397379/211489018-bfe17123-58fb-445b-86fd-ff0ba0e62fec.png" width="300"></kbd>
 </p>
