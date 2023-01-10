@@ -72,8 +72,8 @@ class Tab01Fragment : Fragment() {
         var i = 1
         while (i < 13) {        // １２回繰り返し
             mMin += 15
-            mTime += 15
-            hTime += 60
+            mTime += 900
+            hTime += 3600
             hHou++
             hText = "${hHou}:00:00"
 
