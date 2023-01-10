@@ -23,3 +23,10 @@
   <kbd><img src="https://user-images.githubusercontent.com/66397379/211488364-828ddb0a-dc1f-4522-a1f7-76ab55484f3b.png" width="300"></kbd>
   <kbd><img src="https://user-images.githubusercontent.com/66397379/211489018-bfe17123-58fb-445b-86fd-ff0ba0e62fec.png" width="300"></kbd>
 </p>
+
+パスワードを設定した場合、アラームの解除にパスワード入力が必要になる。
+<p align="center">
+  <kbd><img src="https://user-images.githubusercontent.com/66397379/211490308-fc295b10-61ac-4da4-bff2-a05630e76718.png" width="300"></kbd>
+  <kbd><img src="https://user-images.githubusercontent.com/66397379/211491693-5e24663f-0dfc-4c5f-ae25-a3972cbd5a66.png" width="300"></kbd>
+</p>
+
