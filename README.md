@@ -17,7 +17,8 @@
   <kbd><img src="https://user-images.githubusercontent.com/66397379/211486440-77a0a392-21a3-42f2-9204-3da116525bb4.png" width="300"></kbd>
 </p>
 
-画面左下のスタートボタンをタップするとパスワード設定を求められるので、任意のパスワードを入力して「OK」をタップすると  
+画面左下のスタートボタンをタップするとパスワード設定を求められるので、  
+任意のパスワードを入力して「OK」をタップすると  
 アラームがセットされます。（パスワードの設定は、画面右上の設定画面からオンオフが可能）
 <p align="center">
   <kbd><img src="https://user-images.githubusercontent.com/66397379/211488364-828ddb0a-dc1f-4522-a1f7-76ab55484f3b.png" width="300"></kbd>
