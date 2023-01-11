@@ -47,8 +47,8 @@ $ git clone https://github.com/s20019/ApplicationController.git
 お子さんがアラームを勝手に解除してしまうことを防ぐことができます。
 
 # 制作者
--[s20015](<s20015@std.it-college.ac.jp>)  
--[s20019](<s20019@std.it-college.ac.jp>)
+- [s20015](<s20015@std.it-college.ac.jp>)  
+- [s20019](<s20019@std.it-college.ac.jp>)
 
 # ライセンス
-
+[MIT License](https://github.com/s20019/ApplicationController/blob/master/LICENSE)
