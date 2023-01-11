@@ -16,8 +16,9 @@ class AlarmService :Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val id = intent?.getIntExtra("id", 0) ?: 0
-        val seconds = intent?.getLongExtra("time", 0)
-        Log.d("HOGE_ALARM", "fire AlarmService#onStartCommand id: $id")
+        //val seconds = intent?.getLongExtra("time", 0)
+
+        Log.d("ALARM", "fire AlarmService#onStartCommand id: $id")
 
         val pendingIntent = PendingIntent.getActivity(
             this, id,
@@ -27,8 +28,8 @@ class AlarmService :Service() {
 
         val notification = NotificationCompat.Builder(this, CHANNEL_ID).apply {
             setSmallIcon(android.R.drawable.ic_media_play)
-            setContentTitle("時間ですよ")
-            setContentText("$seconds 秒経過しました。いますぐ手を止めましょう")
+            setContentTitle("時間になりました")
+            setContentText("いますぐ手を止めましょう")
             priority = NotificationCompat.PRIORITY_MAX
             setCategory(NotificationCompat.CATEGORY_CALL)
             setFullScreenIntent(pendingIntent, true)

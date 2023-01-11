@@ -4,14 +4,13 @@ import android.app.Application
 import androidx.core.app.NotificationChannelCompat
 import androidx.core.app.NotificationManagerCompat
 
-const val CHANNEL_ID = "HOGE_NOTIFICATION"
+const val CHANNEL_ID = "MY_NOTIFICATION"
 
-class HogeApplication : Application() {
+class NotifyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         // 通知関連の初期化
         createNotificationChannel()
-//        initNotification()
     }
 
     private fun createNotificationChannel() {
